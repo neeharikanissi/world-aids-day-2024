@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDS Awareness - Year 2024</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background: #E63946;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 2em;
+        }
+        .theme {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 10px;
+        }
+        section {
+            text-align: center;
+            padding: 20px;
+        }
+        .interactive {
+            background-color: #ffddc1;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+        .interactive img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .interactive p {
+            font-size: 1.2em;
+            color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .theme-btn {
+            background: #E63946;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        .theme-btn:hover {
+            background: #ff9a8b;
+        }
+
+        /* Style for the quiz */
+        .quiz-container {
+            display: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .quiz-container p {
+            font-size: 1.2em;
+        }
+        .quiz-container button {
+            background-color: #E63946;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        .quiz-container button:hover {
+            background: #ff9a8b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Unite for Change: End the AIDS Epidemic!</h1>
+        <p class="theme">World AIDS Day 2024 - "Equalize"</p>
+    </header>
+
+    <section>
+        <div class="interactive">
+            <h2>Did you know?</h2>
+            <p>Click on the image to learn more about AIDS awareness and prevention.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Red_Ribbon.svg/800px-Red_Ribbon.svg.png" alt="AIDS Awareness Ribbon" onclick="alert('AIDS is caused by HIV. Know your status, get tested, and stay informed!')">
+        </div>
+        
+        <div class="interactive">
+            <h2>Interactive HIV/AIDS Quiz</h2>
+            <p>Test your knowledge about HIV and AIDS prevention!</p>
+            <a href="javascript:void(0);" class="theme-btn" onclick="startQuiz()">Start Quiz</a>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-container" id="quizContainer">
+            <form id="quizForm">
+                <p>1. What does HIV stand for?</p>
+                <input type="radio" id="hiv1a" name="question1" value="A">
+                <label for="hiv1a">A) Human Immunodeficiency Virus</label><br>
+                <input type="radio" id="hiv1b" name="question1" value="B">
+                <label for="hiv1b">B) High Immune Virus</label><br>
+
+                <p>2. Can HIV be spread by shaking hands?</p>
+                <input type="radio" id="hiv2a" name="question2" value="A">
+                <label for="hiv2a">A) Yes</label><br>
+                <input type="radio" id="hiv2b" name="question2" value="B">
+                <label for="hiv2b">B) No</label><br>
+
+                <button type="button" onclick="checkQuiz()">Submit</button>
+            </form>
+            <p id="result"></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AIDS Awareness Initiative. Join the fight, spread awareness, and be part of the change.</p>
+    </footer>
+
+    <script>
+        function startQuiz() {
+            document.getElementById('quizContainer').style.display = 'block';  // Show the quiz
+        }
+
+        function checkQuiz() {
+            var score = 0;
+
+            // Check question 1
+            if (document.getElementById("hiv1a").checked) {
+                score++;
+            }
+
+            // Check question 2
+            if (document.getElementById("hiv2b").checked) {
+                score++;
+            }
+
+            // Show results
+            document.getElementById("result").innerHTML = "You scored " + score + " out of 2!";
+        }
+    </script>
+
+</body>
+</html>
